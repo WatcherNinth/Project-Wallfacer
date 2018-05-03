@@ -22,7 +22,7 @@ public class TopicPoolScript : MonoBehaviour {
 		clearpool ();
 		Transform data;
 		for (int i = 0; i < cosmos.Instance().Topiclist.Length; i++) {
-			if (cosmos.Instance().Topiclist [i].Discovered == "1") {
+			if (cosmos.Instance().Topiclist [i].Discovered == true) {
 				data = Instantiate (topicprefab, gameObject.transform);
 				data.Find ("Text").GetComponent<Text> ().text = cosmos.Instance().Topiclist [i].Name;
 				data.GetComponent<TopicBarScript> ().topicID = cosmos.Instance().Topiclist [i].NO;

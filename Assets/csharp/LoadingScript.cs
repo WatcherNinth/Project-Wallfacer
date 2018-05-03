@@ -21,27 +21,35 @@ public struct topictype{
 	public string Speaker;
 	public string[] Conclusion;
 	public string[] Related;
-	public string Discovered;
+	public bool Discovered;
+	//Deduction Board
+	public List<evidencetype> Evidence;
+	public List<conclusiontype> ConclusionList;
 }
 public struct conclusiontype{
 	public string NO;
 	public string Name;
 	public string Topic;
-	public string Discovered;
+	public bool Discovered;
+	public bool Activated;
+	public bool Contradicted;
 	public string[][] Support;
 	public string[][] Objection;
 }
-public struct evitype{
-	public string topicID;
-	public string topicName;
-	public List<string> evidence;
+public struct evidencetype{
+	public string eviID;
+	public string evitext;
+	public bool Activated;
 }
+
+
 public class cosmos{
 	private static cosmos instance;
 	public FileLinedatatype[] worddata;
 	public Filedatatype[] document;
 	public topictype[] Topiclist;
 	public conclusiontype[] Conclusionlist;
+	public int test=0;
 	//load data
 	private cosmos (){
 		//ArrayList list = new ArrayList ();
@@ -89,7 +97,13 @@ public class cosmos{
 			Topiclist [i].Speaker = linedata [i] [2];
 			Topiclist [i].Conclusion = linedata [i] [3].Split (' ');
 			Topiclist [i].Related = linedata [i] [4].Split (' ');
-			Topiclist [i].Discovered = linedata [i] [5];
+			if (linedata [i] [5] == "0")
+				Topiclist [i].Discovered = false;
+			else
+				Topiclist [i].Discovered = true;
+			//Deduciton Board init
+			Topiclist[i].Evidence=new List<evidencetype>();
+			Topiclist[i].ConclusionList=new List<conclusiontype>();
 		}
 		//Conclusion
 		string conclusionfilepath = "assets/resource/conclusion.csv";
@@ -103,7 +117,12 @@ public class cosmos{
 			Conclusionlist [i].NO = linedata [i] [0];
 			Conclusionlist [i].Name = linedata [i] [1];
 			Conclusionlist [i].Topic = linedata [i] [2];
-			Conclusionlist [i].Discovered = linedata [i] [3];
+			if (linedata [i] [3] == "0")
+				Conclusionlist [i].Discovered = false;
+			else
+				Conclusionlist [i].Discovered = true;
+			Conclusionlist [i].Activated = false;
+			Conclusionlist [i].Contradicted = false;
 			temp = linedata [i] [4].Split (' ');
 			Conclusionlist [i].Support = new string[temp.Length][];
 			for (int j = 0; j < temp.Length; j++) {
@@ -113,6 +132,11 @@ public class cosmos{
 			Conclusionlist [i].Objection = new string[temp.Length][];
 			for (int j = 0; j < temp.Length; j++) {
 				Conclusionlist [i].Objection [j] = temp [j].Split ('&');
+			}
+			for (int j = 0; j < Topiclist.Length; j++) {
+				if (Conclusionlist [i].Topic == Topiclist [j].NO) {
+					Topiclist [j].ConclusionList.Add (Conclusionlist [i]);
+				}
 			}
 		}
 	}

@@ -75,3 +75,34 @@ D:\New Unity Project\Temp\bin\Debug\Ludiq.Graphs.Editor.pdb
 D:\New Unity Project\Temp\bin\Debug\Ludiq.Graphs.Editor.xml
 D:\New Unity Project\Temp\bin\Debug\Ludiq.Graphs.Runtime.pdb
 D:\New Unity Project\Temp\bin\Debug\Ludiq.Graphs.Runtime.xml
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\Assembly-CSharp.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\nunit.framework.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEditor.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.Analytics.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.HoloLens.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.Networking.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.TestRunner.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.UI.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.VR.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\Mono.Cecil.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\Unity.DataContract.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\Unity.UNetWeaver.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\Unity.CecilTools.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.xml
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEditor.xml
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.UI.xml
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.Networking.xml
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.TestRunner.xml
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\nunit.framework.xml
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.Analytics.xml
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.HoloLens.xml
+D:\GitHub\Project-Wallfacer\Temp\bin\Debug\UnityEngine.VR.xml
+D:\GitHub\Project-Wallfacer\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\GitHub\Project-Wallfacer\obj\Debug\Assembly-CSharp.dll
+D:\GitHub\Project-Wallfacer\obj\Debug\Assembly-CSharp.pdb

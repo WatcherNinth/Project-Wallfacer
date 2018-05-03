@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B2B58FB2-4462-6B0C-A872-40DD957E5FE0}</ProjectGuid>
+    <ProjectGuid>{A72CEEB4-881A-39BE-8260-100DA42EB188}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,105 +46,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_EventSystems_EventTrigger_TriggerEvent.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_AnimationTriggers.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_Button_ButtonClickedEvent.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_ColorBlock.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_Dropdown_DropdownEvent.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_Dropdown_OptionDataList.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_FontData.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_InputField_OnChangeEvent.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_InputField_SubmitEvent.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_MaskableGraphic_CullStateChangedEvent.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_Navigation.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_ScrollRect_ScrollRectEvent.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_Scrollbar_ScrollEvent.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_Slider_SliderEvent.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_SpriteState.cs" />
-     <Compile Include="Assets\Generated\Ludiq.Core\Property Providers\PropertyProvider_UnityEngine_UI_Toggle_ToggleEvent.cs" />
-     <Compile Include="Assets\LoadingScript.cs" />
+     <Compile Include="Assets\TopicBrickScript.cs" />
      <Compile Include="Assets\csharp\ContentTextScript.cs" />
      <Compile Include="Assets\csharp\DataBar.cs" />
      <Compile Include="Assets\csharp\DocumentPanelScript.cs" />
      <Compile Include="Assets\csharp\EvidenceTextScript.cs" />
+     <Compile Include="Assets\csharp\LoadingScript.cs" />
      <Compile Include="Assets\csharp\SearchPool.cs" />
      <Compile Include="Assets\csharp\TopicBarScript.cs" />
      <Compile Include="Assets\csharp\TopicPanelScript.cs" />
      <Compile Include="Assets\csharp\TopicPoolScript.cs" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Data.Entity.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Data.Linq.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Xml.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Runtime.Serialization.Formatters.Soap.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
-     <None Include="Assets\Plugins\Assemblies\Ludiq.Graphs.Runtime.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Management.Instrumentation.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Windows.Presentation.xml" />
-     <None Include="Assets\Plugins\Assemblies\MiscUtil.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Transactions.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.DirectoryServices.AccountManagement.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.ServiceProcess.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.xml" />
-     <None Include="Assets\Plugins\Assemblies\Ludiq.Core.Editor.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Configuration.Install.xml" />
-     <None Include="Assets\Plugins\Assemblies\YamlDotNet.xml" />
-     <None Include="Assets\Plugins\Assemblies\Bolt.Core.Editor.xml" />
-     <None Include="Assets\Bolt Documentation\LICENSES.txt" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Web.Entity.Design.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Core.xml" />
-     <None Include="Assets\Plugins\Assemblies\Bolt.Flow.Editor.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Xml.Linq.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.AddIn.Contract.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Web.Entity.xml" />
-     <None Include="Assets\Plugins\Assemblies\Newtonsoft.Json.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Configuration.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Web.Abstractions.xml" />
-     <None Include="Assets\Generated\Ludiq.Core\Documentation\Assembly-CSharp.xml" />
-     <None Include="Assets\Plugins\Assemblies\SharpRaven.xml" />
-     <None Include="Assets\Plugins\Assemblies\Ionic.Zip.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.AddIn.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Management.xml" />
-     <None Include="Assets\Plugins\Assemblies\Bolt.Flow.Runtime.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Runtime.Remoting.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Web.DynamicData.Design.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Drawing.xml" />
-     <None Include="Assets\Plugins\Assemblies\Bolt.State.Editor.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Data.SqlXml.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.DirectoryServices.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Messaging.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\mscorlib.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Printing.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Utilities.v3.5.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.ServiceModel.xml" />
-     <None Include="Assets\Plugins\Assemblies\Ludiq.Graphs.Editor.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Data.Services.Client.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Runtime.Serialization.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Framework.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.EnterpriseServices.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Web.DynamicData.xml" />
-     <None Include="Assets\Bolt Documentation\0. READ ME FIRST.txt" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Net.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.ServiceModel.Web.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Conversion.v3.5.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Web.Routing.xml" />
-     <None Include="Assets\Plugins\Assemblies\Ludiq.Core.Runtime.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.ComponentModel.DataAnnotations.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Data.Services.Design.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Data.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\Microsoft.VisualC.STLCLR.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Data.Services.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.IdentityModel.xml" />
-     <None Include="Assets\Plugins\Assemblies\Bolt.State.Runtime.xml" />
-     <None Include="Assets\Plugins\Assemblies\System.Threading.xml" />
-     <None Include="Assets\Plugins\Assemblies\Bolt.Core.Runtime.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Data.DataSetExtensions.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Deployment.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.WorkflowServices.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Data.Entity.Design.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Windows.Forms.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Security.xml" />
-     <None Include="Assets\Editor Default Resources\Ludiq.Core\DotNetDocumentation\System.Web.Services.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -165,60 +76,6 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
- </Reference>
- <Reference Include="Antlr3.Runtime">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Antlr3.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Bolt.Core.Editor">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Bolt.Core.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Bolt.Core.Runtime">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Bolt.Core.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Bolt.Flow.Editor">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Bolt.Flow.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Bolt.Flow.Runtime">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Bolt.Flow.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Bolt.State.Editor">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Bolt.State.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Bolt.State.Runtime">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Bolt.State.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Ionic.Zip">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Ionic.Zip.dll</HintPath>
- </Reference>
- <Reference Include="Ludiq.Core.Editor">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Ludiq.Core.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Ludiq.Core.Runtime">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Ludiq.Core.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Ludiq.Graphs.Editor">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Ludiq.Graphs.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Ludiq.Graphs.Runtime">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Ludiq.Graphs.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Ludiq.Platforms">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Ludiq.Platforms.dll</HintPath>
- </Reference>
- <Reference Include="MiscUtil">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/MiscUtil.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/Newtonsoft.Json.dll</HintPath>
- </Reference>
- <Reference Include="SharpRaven">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/SharpRaven.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/System.Threading.dll</HintPath>
- </Reference>
- <Reference Include="YamlDotNet">
- <HintPath>D:/New Unity Project/Assets/Plugins/Assemblies/YamlDotNet.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

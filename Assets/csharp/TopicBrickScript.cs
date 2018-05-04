@@ -44,7 +44,7 @@ public class TopicBrickScript : MonoBehaviour {
 			Activate ();
 		}
 	}
-	void updateevi(){
+	public void updateevi(){
 		Transform temp;
 		evilist.Clear ();
 		for (int i = 0; i < evipanel.childCount; i++) {
@@ -85,7 +85,7 @@ public class TopicBrickScript : MonoBehaviour {
 		consettlement ();
 		pushdata ();
 	}
-	void updatecon(){
+	public void updatecon(){
 		Transform temp;
 		for (int i = 0; i < conpanel.childCount; i++) {
 			Destroy (conpanel.GetChild (i).gameObject);
@@ -134,9 +134,7 @@ public class TopicBrickScript : MonoBehaviour {
 						}
 					}
 					print (topicID + " conclusion" + i + " Scondition" + j + flag);
-					//handle discover
-					if (topic.ConclusionList [i].Discovered == false)
-						temp.Discovered = true;
+
 				}
 			}
 			flag = false;
@@ -146,6 +144,9 @@ public class TopicBrickScript : MonoBehaviour {
 					break;
 				}
 			}
+			//handle discover
+			if (flag && topic.ConclusionList [i].Discovered == false)
+				temp.Discovered = true;
 			temp.Interactedable = flag;
 			//activated conclusion failed to met the support
 			if (temp.Activated && flag == false) {

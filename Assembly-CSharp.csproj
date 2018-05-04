@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\TopicBrickScript.cs" />
      <Compile Include="Assets\csharp\ContentTextScript.cs" />
      <Compile Include="Assets\csharp\DataBar.cs" />
      <Compile Include="Assets\csharp\DocumentPanelScript.cs" />
@@ -54,6 +53,7 @@
      <Compile Include="Assets\csharp\LoadingScript.cs" />
      <Compile Include="Assets\csharp\SearchPool.cs" />
      <Compile Include="Assets\csharp\TopicBarScript.cs" />
+     <Compile Include="Assets\csharp\TopicBrickScript.cs" />
      <Compile Include="Assets\csharp\TopicPanelScript.cs" />
      <Compile Include="Assets\csharp\TopicPoolScript.cs" />
  <Reference Include="UnityEngine.UI">

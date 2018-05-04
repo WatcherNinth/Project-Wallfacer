@@ -31,10 +31,13 @@ public struct conclusiontype{
 	public string Name;
 	public string Topic;
 	public bool Discovered;
+	public bool Interactedable;
 	public bool Activated;
 	public bool Contradicted;
 	public string[][] Support;
+	public bool[] Supportmet;
 	public string[][] Objection;
+	public bool[] Objectionmet;
 }
 public struct evidencetype{
 	public string eviID;
@@ -122,16 +125,21 @@ public class cosmos{
 			else
 				Conclusionlist [i].Discovered = true;
 			Conclusionlist [i].Activated = false;
+			Conclusionlist [i].Interactedable = false;
 			Conclusionlist [i].Contradicted = false;
 			temp = linedata [i] [4].Split (' ');
 			Conclusionlist [i].Support = new string[temp.Length][];
+			Conclusionlist [i].Supportmet = new bool[temp.Length];
 			for (int j = 0; j < temp.Length; j++) {
 				Conclusionlist [i].Support [j] = temp [j].Split ('&');
+				Conclusionlist [i].Supportmet [j] = false;
 			}
 			temp = linedata [i] [5].Split (' ');
 			Conclusionlist [i].Objection = new string[temp.Length][];
+			Conclusionlist [i].Objectionmet = new bool[temp.Length];
 			for (int j = 0; j < temp.Length; j++) {
 				Conclusionlist [i].Objection [j] = temp [j].Split ('&');
+				Conclusionlist [i].Objectionmet [j] = false;
 			}
 			for (int j = 0; j < Topiclist.Length; j++) {
 				if (Conclusionlist [i].Topic == Topiclist [j].NO) {

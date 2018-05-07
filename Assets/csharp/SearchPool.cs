@@ -22,9 +22,9 @@ public class SearchPool : MonoBehaviour {
 		//clear searchpool if needed
 		clearpool();
 		//setup display array
-		for(int i=0;i<cosmos.Instance().document.Length;i++) {
-			if (cosmos.Instance().document [i].Name.IndexOf (word) != -1 && cosmos.Instance().document[i].Stored == "0") {
-				list.Add (cosmos.Instance().document [i]);
+		for(int i=0;i<Cosmos.Instance().document.Length;i++) {
+			if (Cosmos.Instance().document [i].Name.IndexOf (word) != -1 && Cosmos.Instance().document[i].Stored == "0") {
+				list.Add (Cosmos.Instance().document [i]);
 			}
 		}
 		Filedatatype[] display = (Filedatatype[])list.ToArray (typeof(Filedatatype));

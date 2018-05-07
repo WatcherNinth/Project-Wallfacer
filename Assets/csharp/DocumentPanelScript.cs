@@ -15,8 +15,8 @@ public class DocumentPanelScript : MonoBehaviour {
 		ArrayList list = new ArrayList ();
 		Transform data;
 
-		for (int i = 0; i < cosmos.Instance().worddata.Length; i++) {
-			if (cosmos.Instance().worddata[i].FileID == NO) list.Add (cosmos.Instance().worddata[i]);
+		for (int i = 0; i < Cosmos.Instance().worddata.Length; i++) {
+			if (Cosmos.Instance().worddata[i].FileID == NO) list.Add (Cosmos.Instance().worddata[i]);
 		}
 
 		FileLinedatatype[] display = (FileLinedatatype[])list.ToArray (typeof(FileLinedatatype));
@@ -46,6 +46,5 @@ public class DocumentPanelScript : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }

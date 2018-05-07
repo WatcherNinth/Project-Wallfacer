@@ -28,8 +28,26 @@ public class DeductionBoardScript : MonoBehaviour {
 			content.GetChild (i).GetComponent<TopicBrickScript> ().updatecon();
 		}
 	}
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    float scale = 1;
+    void Update()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") != 0 && mousein)
+        {
+            scale += Input.GetAxis("Mouse ScrollWheel");
+            if (scale < 0.4) scale = 0.4f;
+            if (scale > 2) scale = 2;
+            gameObject.transform.Find("Viewport/Content").localScale = new Vector3(1 * scale, 1 * scale, 1 * scale);
+        }
+    }
+    bool mousein = false;
+    private void OnMouseOver()
+    {
+        mousein = true;
+       // print(mousein);
+    }
+    private void OnMouseExit()
+    {
+        mousein = false;
+       // print(mousein);
+    }
 }

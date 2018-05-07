@@ -19,19 +19,19 @@ public struct topictype{
 	public string NO;
 	public string Name;
 	public string Speaker;
-	public string[] Conclusion;
+	//public string[] Conclusion;
 	public string[] Related;
 	public bool Discovered;
 	//Deduction Board
-	public List<evidencetype> Evidence;
-	public List<conclusiontype> ConclusionList;
+	public List<Evidencetype> Evidence;
+	public List<Conclusiontype> Conclusion;
 }
-public struct conclusiontype{
+public struct Conclusiontype{
 	public string NO;
 	public string Name;
 	public string Topic;
 	public bool Discovered;
-	public bool Interactedable;
+	public bool Interactable;
 	public bool Activated;
 	public bool Contradicted;
 	public string[][] Support;
@@ -39,24 +39,29 @@ public struct conclusiontype{
 	public string[][] Objection;
 	public bool[] Objectionmet;
 }
-public struct evidencetype{
+public struct Evidencetype{
 	public string eviID;
 	public string evitext;
 	public bool Activated;
 }
+/*public struct Contradictiontype
+{
+    public string title;
+    public List<string> Condition;
+}*/
 
-
-public class cosmos{
-	private static cosmos instance;
-	public FileLinedatatype[] worddata;
-	public Filedatatype[] document;
-	public topictype[] Topiclist;
-	public conclusiontype[] Conclusionlist;
-	public int test=0;
+public class Cosmos {
+    private static Cosmos instance;
+    public FileLinedatatype[] worddata;
+    public Filedatatype[] document;
+    public topictype[] Topiclist;
+    public Conclusiontype[] Conclusionlist;
+    public List<Conclusiontype> ActivatedConclusion;
 	//load data
-	private cosmos (){
-		//ArrayList list = new ArrayList ();
-		//init worddata
+	private Cosmos (){
+        //ArrayList list = new ArrayList ();
+        //init worddata
+        ActivatedConclusion = new List<Conclusiontype>();
 		string filepath = "assets/resource/content.csv";
 		string[] filedata = File.ReadAllLines (filepath);
 		string[][] linedata=new string[filedata.Length-1][];
@@ -98,15 +103,15 @@ public class cosmos{
 			Topiclist [i].NO = linedata [i] [0];
 			Topiclist [i].Name = linedata [i] [1];
 			Topiclist [i].Speaker = linedata [i] [2];
-			Topiclist [i].Conclusion = linedata [i] [3].Split (' ');
+			//Topiclist [i].Conclusion = linedata [i] [3].Split (' ');
 			Topiclist [i].Related = linedata [i] [4].Split (' ');
 			if (linedata [i] [5] == "0")
 				Topiclist [i].Discovered = false;
 			else
 				Topiclist [i].Discovered = true;
 			//Deduciton Board init
-			Topiclist[i].Evidence=new List<evidencetype>();
-			Topiclist[i].ConclusionList=new List<conclusiontype>();
+			Topiclist[i].Evidence=new List<Evidencetype>();
+			Topiclist[i].Conclusion=new List<Conclusiontype>();
 		}
 		//Conclusion
 		string conclusionfilepath = "assets/resource/conclusion.csv";
@@ -115,7 +120,7 @@ public class cosmos{
 		for (int i = 1; i < filedata.Length; i++) {
 			linedata [i - 1] = filedata [i].Split (',');
 		}
-		Conclusionlist = new conclusiontype[linedata.Length];
+		Conclusionlist = new Conclusiontype[linedata.Length];
 		for (int i = 0; i < linedata.Length; i++) {
 			Conclusionlist [i].NO = linedata [i] [0];
 			Conclusionlist [i].Name = linedata [i] [1];
@@ -125,7 +130,7 @@ public class cosmos{
 			else
 				Conclusionlist [i].Discovered = true;
 			Conclusionlist [i].Activated = false;
-			Conclusionlist [i].Interactedable = false;
+			Conclusionlist [i].Interactable = false;
 			Conclusionlist [i].Contradicted = false;
 			temp = linedata [i] [4].Split (' ');
 			Conclusionlist [i].Support = new string[temp.Length][];
@@ -143,14 +148,14 @@ public class cosmos{
 			}
 			for (int j = 0; j < Topiclist.Length; j++) {
 				if (Conclusionlist [i].Topic == Topiclist [j].NO) {
-					Topiclist [j].ConclusionList.Add (Conclusionlist [i]);
+					Topiclist [j].Conclusion.Add (Conclusionlist [i]);
 				}
 			}
 		}
 	}
-	public static cosmos Instance(){
+	public static Cosmos Instance(){
 		if (instance == null)
-			instance = new cosmos ();
+			instance = new Cosmos ();
 		return instance;
 	}
 	public string searchline(string ID){
@@ -175,10 +180,12 @@ public class LoadingScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	}
+        
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
 }

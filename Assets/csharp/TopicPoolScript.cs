@@ -21,11 +21,11 @@ public class TopicPoolScript : MonoBehaviour {
 	public void displaytopic(){
 		clearpool ();
 		Transform data;
-		for (int i = 0; i < cosmos.Instance().Topiclist.Length; i++) {
-			if (cosmos.Instance().Topiclist [i].Discovered == true) {
+		for (int i = 0; i < Cosmos.Instance().Topiclist.Length; i++) {
+			if (Cosmos.Instance().Topiclist [i].Discovered == true) {
 				data = Instantiate (topicprefab, gameObject.transform);
-				data.Find ("Text").GetComponent<Text> ().text = cosmos.Instance().Topiclist [i].Name;
-				data.GetComponent<TopicBarScript> ().topicID = cosmos.Instance().Topiclist [i].NO;
+				data.Find ("Text").GetComponent<Text> ().text = Cosmos.Instance().Topiclist [i].Name;
+				data.GetComponent<TopicBarScript> ().topicID = Cosmos.Instance().Topiclist [i].NO;
 			}
 		}
 	}

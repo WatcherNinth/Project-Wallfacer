@@ -14,6 +14,7 @@ public class ContradictionPanelScript : MonoBehaviour {
         ContradictionList=new List<Conclusiontype>();
         Condition = new List<string>();
         ContradictionTransform = new List<Transform>();
+        UpdateContradiction();
     }
     public void UpdateContradiction()
     {

@@ -28,13 +28,6 @@ public class DeductionBoardScript : MonoBehaviour {
 			content.GetChild (i).GetComponent<TopicBrickScript> ().updatecon();
 		}
 	}
-    public void globalconsettlement()
-    {
-        for (int i = 0; i < content.childCount; i++)
-        {
-            content.GetChild(i).GetComponent<TopicBrickScript>().consettlement();
-        }
-    }
     float scale = 1;
     void Update()
     {

@@ -13,7 +13,7 @@ public class TopicBrickScript : MonoBehaviour {
 
 	private Transform evipanel;
 	private Transform conpanel;
-	private Topictype topic;
+	private topictype topic;
 	private List<Transform> evilist;
     private List<Transform> conlist;
 	// Use this for initialization
@@ -88,9 +88,7 @@ public class TopicBrickScript : MonoBehaviour {
 		}
 		topic.Evidence [target] = temp;
 		consettlement ();
-        //update contradiction panel
-        GameObject.Find("DeductBoardPanel/ContradictPanel").GetComponent<ContradictionPanelScript>().UpdateContradiction();
-        pushdata ();
+		pushdata ();
 	}
     
 	public void updatecon(){
@@ -113,6 +111,7 @@ public class TopicBrickScript : MonoBehaviour {
 				if (topic.Conclusion [i].Interactable)
 					temp.GetComponent<Toggle> ().interactable = true;
 				else
+                    //debug
 					temp.GetComponent<Toggle> ().interactable = false;
 				//contracted
 				if (topic.Conclusion [i].Contradicted)
@@ -126,7 +125,6 @@ public class TopicBrickScript : MonoBehaviour {
         foreach(Transform item in conlist)
         {
             item.GetComponent<Toggle>().onValueChanged.AddListener(ifselect => { conclickhandler(item, ifselect); });
-            //item.GetComponent<BoxCollider2D>().size = item.GetComponent<RectTransform>().rect.size;
         }
 	}
     void conclickhandler(Transform con, bool On)
@@ -144,14 +142,10 @@ public class TopicBrickScript : MonoBehaviour {
             temp.Activated = false;
         }
         topic.Conclusion[target] = temp;
-        //activate a conclusion can cause many contradiction appears
-        //global consettlement
-        GameObject.Find("DeductBoardPanel").GetComponent<DeductionBoardScript>().globalconsettlement();
-        //update contradiction panel
-        GameObject.Find("DeductBoardPanel/ContradictPanel").GetComponent<ContradictionPanelScript>().UpdateContradiction();
+        consettlement();
         pushdata();
     }
-    public void consettlement(){
+    void consettlement(){
 		//bool changed=false;
 		bool flag=false;
 		Conclusiontype temp;
@@ -218,6 +212,8 @@ public class TopicBrickScript : MonoBehaviour {
 			temp.Contradicted = flag;
 			//push back temp
 			topic.Conclusion [i] = temp;
+            //calculate contradiction
+            GameObject.Find("DeductBoardPanel/ContradictPanel").GetComponent<ContradictionPanelScript>().UpdateContradiction();
 		}
 		updatecon ();
 	}
@@ -254,7 +250,6 @@ public class TopicBrickScript : MonoBehaviour {
         }
         temp = discovered.ToString() + "/" + topic.Conclusion.Count.ToString();
         gameObject.transform.Find("ConclusionNum").GetComponent<Text>().text = temp;
-        gameObject.SetActive(topic.Discovered);
     }
 	// Update is called once per frame
 	void Update () {

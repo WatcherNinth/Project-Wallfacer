@@ -22,11 +22,13 @@ public class DeductionBoardScript : MonoBehaviour {
 		}
 	}
 	void updatealltopic(){
-		print (content.childCount);
 		for (int i = 0; i < content.childCount; i++) {
-			content.GetChild (i).GetComponent<TopicBrickScript> ().updateevi();
+            content.GetChild(i).GetComponent<TopicBrickScript>().pulldata();
+            content.GetChild (i).GetComponent<TopicBrickScript> ().updateevi();
 			content.GetChild (i).GetComponent<TopicBrickScript> ().updatecon();
-		}
+            content.GetChild(i).GetComponent<TopicBrickScript>().brickset();
+        }
+        GameObject.Find("DeductionPanel/TopicPool/LayoutController").GetComponent<TopicPoolScript>().displaytopic();
 	}
     public void globalconsettlement()
     {
@@ -34,6 +36,24 @@ public class DeductionBoardScript : MonoBehaviour {
         {
             content.GetChild(i).GetComponent<TopicBrickScript>().consettlement();
         }
+    }
+    public void globaltopicsettlement()
+    {
+        bool flag;
+        for(int i = 0; i < Cosmos.Instance().Topiclist.Length; i++)
+        {
+            if (Cosmos.Instance().Topiclist[i].Depand.Length != 0)
+            {
+                flag = false;
+                for(int j=0;j< Cosmos.Instance().Topiclist[i].Depand.Length; j++)
+                {
+                    if (Cosmos.Instance().ActivatedConclusion.FindIndex(x => x.NO == Cosmos.Instance().Topiclist[i].Depand[j]) != -1) flag = true;
+                }
+                if (flag && Cosmos.Instance().Topiclist[i].Discovered == false) Cosmos.Instance().Topiclist[i].Discovered = true;
+                Cosmos.Instance().Topiclist[i].Interactable = flag;
+            }
+        }
+        updatealltopic();
     }
     float scale = 1;
     void Update()

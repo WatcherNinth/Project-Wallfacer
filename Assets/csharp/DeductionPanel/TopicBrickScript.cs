@@ -132,6 +132,7 @@ public class TopicBrickScript : MonoBehaviour {
     void conclickhandler(Transform con, bool On)
     {
         Conclusiontype temp;
+        Transform DeductBoard = GameObject.Find("DeductBoardPanel").transform;
         int target = con.GetSiblingIndex();
         print(target + " " + On);
         temp = topic.Conclusion[target];
@@ -147,8 +148,10 @@ public class TopicBrickScript : MonoBehaviour {
         //activate a conclusion can cause many contradiction appears
         //global consettlement
         GameObject.Find("DeductBoardPanel").GetComponent<DeductionBoardScript>().globalconsettlement();
+        //global topicsettlement
+        GameObject.Find("DeductBoardPanel").GetComponent<DeductionBoardScript>().globaltopicsettlement();
         //update contradiction panel
-        GameObject.Find("DeductBoardPanel/ContradictPanel").GetComponent<ContradictionPanelScript>().UpdateContradiction();
+        GameObject.Find("DeductBoardPanel").transform.Find("ContradictPanel").GetComponent<ContradictionPanelScript>().UpdateContradiction();
         pushdata();
     }
     public void consettlement(){
@@ -228,7 +231,7 @@ public class TopicBrickScript : MonoBehaviour {
         if (Cosmos.Instance().ActivatedConclusion.FindIndex(x => x.NO == id) != -1) return true;
 		return false;
 	}
-	void pulldata(){
+	public void pulldata(){
 		for (int i = 0; i < Cosmos.Instance ().Topiclist.Length; i++) {
 			if (Cosmos.Instance ().Topiclist [i].NO == topicID) {
 				topic = Cosmos.Instance ().Topiclist [i];
@@ -244,7 +247,7 @@ public class TopicBrickScript : MonoBehaviour {
 			}
 		}
 	}
-    void brickset()
+    public void brickset()
     {
         string temp;
         int discovered=0;

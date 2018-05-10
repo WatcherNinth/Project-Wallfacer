@@ -34,6 +34,7 @@ public struct Conclusiontype{
 	public string Topic;
 	public bool Discovered;
 	public bool Interactable;
+    public bool Assumption;
 	public bool Activated;
 	public bool Contradicted;
 	public string[][] Support;
@@ -112,7 +113,12 @@ public class Cosmos {
 				Topiclist [i].Discovered = false;
 			else
 				Topiclist [i].Discovered = true;
-            //Topiclist[i].Depand = linedata[i][6].Split(' ');
+            Topiclist[i].Depand = linedata[i][6].Split(' ');
+            if (Topiclist[i].Depand.Length != 0)
+            {
+                Topiclist[i].Interactable = false;
+            }
+            else Topiclist[i].Interactable = true;
             //Deduciton Board init
             Topiclist[i].Evidence=new List<Evidencetype>();
 			Topiclist[i].Conclusion=new List<Conclusiontype>();
@@ -150,8 +156,10 @@ public class Cosmos {
 				Conclusionlist [i].Objection [j] = temp [j].Split ('&');
 				Conclusionlist [i].Objectionmet [j] = false;
 			}
-            //Conclusionlist[i].Lit = linedata[i][6].Split(' ');
-			for (int j = 0; j < Topiclist.Length; j++) {
+            Conclusionlist[i].Lit = linedata[i][6].Split(' ');
+            if (linedata[i][7] == "1") Conclusionlist[i].Assumption = true;
+            else Conclusionlist[i].Assumption = false ;
+            for (int j = 0; j < Topiclist.Length; j++) {
 				if (Conclusionlist [i].Topic == Topiclist [j].NO) {
 					Topiclist [j].Conclusion.Add (Conclusionlist [i]);
 				}

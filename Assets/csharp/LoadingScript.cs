@@ -21,6 +21,11 @@ public struct topictype{
 	public string Speaker;
 	//public string[] Conclusion;
 	public string[] Related;
+<<<<<<< HEAD
+=======
+    public string[] Depand;
+    public bool[] Depandmet;
+>>>>>>> origin/master
 	public bool Discovered;
 	//Deduction Board
 	public List<Evidencetype> Evidence;
@@ -32,6 +37,7 @@ public struct Conclusiontype{
 	public string Topic;
 	public bool Discovered;
 	public bool Interactable;
+    public bool Assumption;
 	public bool Activated;
 	public bool Contradicted;
 	public string[][] Support;
@@ -109,8 +115,20 @@ public class Cosmos {
 				Topiclist [i].Discovered = false;
 			else
 				Topiclist [i].Discovered = true;
+<<<<<<< HEAD
 			//Deduciton Board init
 			Topiclist[i].Evidence=new List<Evidencetype>();
+=======
+            Topiclist[i].Depand = linedata[i][6].Split(' ');
+            Topiclist[i].Depandmet = new bool[Topiclist[i].Depand.Length];
+            if (Topiclist[i].Depand[0] != "0")
+            {
+                Topiclist[i].Interactable = false;
+            }
+            else Topiclist[i].Interactable = true;
+            //Deduciton Board init
+            Topiclist[i].Evidence=new List<Evidencetype>();
+>>>>>>> origin/master
 			Topiclist[i].Conclusion=new List<Conclusiontype>();
 		}
 		//Conclusion
@@ -146,7 +164,14 @@ public class Cosmos {
 				Conclusionlist [i].Objection [j] = temp [j].Split ('&');
 				Conclusionlist [i].Objectionmet [j] = false;
 			}
+<<<<<<< HEAD
 			for (int j = 0; j < Topiclist.Length; j++) {
+=======
+            Conclusionlist[i].Lit = linedata[i][6].Split(' ');
+            if (linedata[i][7] == "1") Conclusionlist[i].Assumption = true;
+            else Conclusionlist[i].Assumption = false ;
+            for (int j = 0; j < Topiclist.Length; j++) {
+>>>>>>> origin/master
 				if (Conclusionlist [i].Topic == Topiclist [j].NO) {
 					Topiclist [j].Conclusion.Add (Conclusionlist [i]);
 				}

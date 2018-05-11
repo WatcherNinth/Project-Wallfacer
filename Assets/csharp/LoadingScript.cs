@@ -22,6 +22,7 @@ public struct Topictype{
 	//public string[] Conclusion;
 	public string[] Related;
     public string[] Depand;
+    public bool[] Depandmet;
 	public bool Discovered;
     public bool Interactable;
 	//Deduction Board
@@ -114,7 +115,8 @@ public class Cosmos {
 			else
 				Topiclist [i].Discovered = true;
             Topiclist[i].Depand = linedata[i][6].Split(' ');
-            if (Topiclist[i].Depand.Length != 0)
+            Topiclist[i].Depandmet = new bool[Topiclist[i].Depand.Length];
+            if (Topiclist[i].Depand[0] != "0")
             {
                 Topiclist[i].Interactable = false;
             }

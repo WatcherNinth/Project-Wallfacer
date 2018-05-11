@@ -24,18 +24,47 @@ public class DeductionBoardScript : MonoBehaviour {
 	void updatealltopic(){
 		for (int i = 0; i < content.childCount; i++) {
             content.GetChild(i).GetComponent<TopicBrickScript>().pulldata();
-            content.GetChild (i).GetComponent<TopicBrickScript> ().updateevi();
-			content.GetChild (i).GetComponent<TopicBrickScript> ().updatecon();
-            content.GetChild(i).GetComponent<TopicBrickScript>().brickset();
+            content.GetChild(i).GetComponent<TopicBrickScript>().updatetopicbrick();
         }
         GameObject.Find("DeductionPanel/TopicPool/LayoutController").GetComponent<TopicPoolScript>().displaytopic();
 	}
     public void globalconsettlement()
     {
-        for (int i = 0; i < content.childCount; i++)
+        bool changed=false;
+        int safety = 0;
+        do
         {
-            content.GetChild(i).GetComponent<TopicBrickScript>().consettlement();
+            changed = false;
+            for (int i = 0; i < content.childCount; i++)
+            {
+                if (content.GetChild(i).GetComponent<TopicBrickScript>().consettlement() && changed == false) changed = true;
+            }
+            if (changed)
+            {
+                UpdateActiveConclusion();
+            }
+            safety++;
+            if (safety == 10)
+            {
+                print("Globalconsettlement Overrrun!!!");
+                return;
+            }
+        } while (changed);
+        updatealltopic();
+        GameObject.Find("DeductBoardPanel/ContradictPanel").GetComponent<ContradictionPanelScript>().UpdateContradiction();
+    }
+    public void UpdateActiveConclusion()
+    {
+        Cosmos.Instance().ActivatedConclusion.Clear();
+        for(int i = 0; i < Cosmos.Instance().Topiclist.Length; i++)
+        {
+            for(int j = 0; j < Cosmos.Instance().Topiclist[i].Conclusion.Count; j++)
+            {
+                if (Cosmos.Instance().Topiclist[i].Conclusion[j].Interactable && Cosmos.Instance().Topiclist[i].Conclusion[j].Activated)
+                    Cosmos.Instance().ActivatedConclusion.Add(Cosmos.Instance().Topiclist[i].Conclusion[j]);
+            }
         }
+        print(Cosmos.Instance().ActivatedConclusion.Count);
     }
     public void globaltopicsettlement()
     {

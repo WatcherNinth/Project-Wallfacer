@@ -21,10 +21,14 @@ MonoBehaviour:
   m_Title: 
   m_RootView: {fileID: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 392}
 =======
   m_MinSize: {x: 950, y: 542}
 >>>>>>> origin/master
+=======
+  m_MinSize: {x: 950, y: 392}
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -48,10 +52,14 @@ MonoBehaviour:
     width: 1920
     height: 1117
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 392}
 =======
   m_MinSize: {x: 950, y: 542}
 >>>>>>> origin/master
+=======
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -118,10 +126,14 @@ MonoBehaviour:
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 45
 =======
   controlID: 101
 >>>>>>> origin/master
+=======
+  controlID: 9
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,10 +158,14 @@ MonoBehaviour:
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 46
 =======
   controlID: 68
 >>>>>>> origin/master
+=======
+  controlID: 10
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,8 +260,13 @@ MonoBehaviour:
     y: 796
     width: 1512
     height: 271
+<<<<<<< HEAD
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 16}
@@ -270,8 +291,8 @@ MonoBehaviour:
     y: 0
     width: 408
     height: 1067
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -334,7 +355,7 @@ MonoBehaviour:
       y: 17
       width: 1217
       height: 758
-    m_Scale: {x: 0.63385415, y: 0.6338542}
+    m_Scale: {x: 0.6338542, y: 0.6338542}
     m_Translation: {x: 608.5, y: 379.00003}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -342,9 +363,9 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -960
+      x: -959.99994
       y: -597.9293
-      width: 1920
+      width: 1919.9999
       height: 1195.8586
     m_MinimalGUI: 1
   m_defaultScale: 0.63385415
@@ -382,6 +403,7 @@ MonoBehaviour:
     height: 775
   m_TreeViewState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 6c270000
     m_LastClickedID: 10092
@@ -392,20 +414,26 @@ MonoBehaviour:
     m_LastClickedID: 0
     m_ExpandedIDs: d255fafff6c8faffc046fbff7a8afdff5af9ffff64f9ffffcef9ffffd0f9ffffd8f9ffff9efbffffa0fbffffa8fbffffe4fbffff00000000d8250000e22600009e270000ae270000
 >>>>>>> origin/master
+=======
+    scrollPos: {x: 0, y: 127.63739}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 40b6fdff88b6fdffeed9feff5801ffff6201ffff0a80ffff54c8ffff56cbffffa8d3ffffe8e9ffffeefafffff0faffffe2fbffff00000000be250000d6250000fa250000182600007626000096260000a0260000b4260000c4260000e02600005227000064270000742700008a270000
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: DeductionPanel
+      m_OriginalName: DeductionPanel
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 10122
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -563,16 +591,17 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/resource
+    - Assets/prefab/TopicBrick
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
-  - Assets/resource
+  - Assets/prefab/TopicBrick
   m_LastFoldersGridSize: 75
   m_LastProjectPath: D:\GitHub\Project-Wallfacer
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_SelectedIDs: 44250000
     m_LastClickedID: 9540
@@ -582,6 +611,11 @@ MonoBehaviour:
     m_LastClickedID: 9536
     m_ExpandedIDs: 00000000cc2400001a2500002e2500001429000000ca9a3bffffff7f
 >>>>>>> origin/master
+=======
+    m_SelectedIDs: 00250000
+    m_LastClickedID: 9472
+    m_ExpandedIDs: 00000000c8240000182500002c250000d028000000ca9a3bffffff7f
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,10 +644,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000d024000034250000be280000
 =======
     m_ExpandedIDs: 00000000cc2400001a2500002e25000014290000
 >>>>>>> origin/master
+=======
+    m_ExpandedIDs: 00000000c8240000182500002c250000d0280000
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -638,8 +676,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 64270000
+    m_LastClickedInstanceID: 10084
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< HEAD
     m_ExpandedInstanceIDs: c6230000325ef7ffd82400003cacfdffca2400002ca8feff102b00004a2500002e25000000000000

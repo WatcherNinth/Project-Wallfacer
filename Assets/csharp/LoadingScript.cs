@@ -24,8 +24,11 @@ public struct topictype{
 <<<<<<< HEAD
 =======
     public string[] Depand;
+<<<<<<< HEAD
     public bool[] Depandmet;
 >>>>>>> origin/master
+=======
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
 	public bool Discovered;
 	//Deduction Board
 	public List<Evidencetype> Evidence;
@@ -120,8 +123,7 @@ public class Cosmos {
 			Topiclist[i].Evidence=new List<Evidencetype>();
 =======
             Topiclist[i].Depand = linedata[i][6].Split(' ');
-            Topiclist[i].Depandmet = new bool[Topiclist[i].Depand.Length];
-            if (Topiclist[i].Depand[0] != "0")
+            if (Topiclist[i].Depand.Length != 0)
             {
                 Topiclist[i].Interactable = false;
             }

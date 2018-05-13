@@ -20,15 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_MinSize: {x: 950, y: 392}
-=======
   m_MinSize: {x: 950, y: 542}
->>>>>>> origin/master
-=======
-  m_MinSize: {x: 950, y: 392}
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -51,15 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1117
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_MinSize: {x: 950, y: 392}
-=======
   m_MinSize: {x: 950, y: 542}
->>>>>>> origin/master
-=======
-  m_MinSize: {x: 950, y: 300}
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -122,22 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1067
-  m_MinSize: {x: 683, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-<<<<<<< HEAD
   controlID: 45
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 45
-=======
-  controlID: 101
->>>>>>> origin/master
-=======
-  controlID: 9
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
->>>>>>> e7b72755d6b74b56e4b02ccb442324476d09ab2b
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,22 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1512
     height: 1067
-  m_MinSize: {x: 406, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-<<<<<<< HEAD
   controlID: 46
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 46
-=======
-  controlID: 68
->>>>>>> origin/master
-=======
-  controlID: 10
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
->>>>>>> e7b72755d6b74b56e4b02ccb442324476d09ab2b
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,19 +228,14 @@ MonoBehaviour:
     y: 796
     width: 1512
     height: 271
-<<<<<<< HEAD
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-=======
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,8 +254,8 @@ MonoBehaviour:
     y: 0
     width: 408
     height: 1067
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -363,7 +318,7 @@ MonoBehaviour:
       y: 17
       width: 1217
       height: 758
-    m_Scale: {x: 0.6338542, y: 0.6338542}
+    m_Scale: {x: 0.63385415, y: 0.6338542}
     m_Translation: {x: 608.5, y: 379.00003}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -371,9 +326,9 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -959.99994
+      x: -960
       y: -597.9293
-      width: 1919.9999
+      width: 1920
       height: 1195.8586
     m_MinimalGUI: 1
   m_defaultScale: 0.63385415
@@ -410,45 +365,24 @@ MonoBehaviour:
     width: 289
     height: 775
   m_TreeViewState:
-<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 90fbffff00000000
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6c270000
-    m_LastClickedID: 10092
-    m_ExpandedIDs: 081dfdff00d6fdff90e4fdfff0fafffffafaffffe4fbffff00000000d0250000da250000f025000036260000c62600006c2700007a27000084270000aa270000
-=======
-    scrollPos: {x: 0, y: 10}
-    m_SelectedIDs: 32250000
-    m_LastClickedID: 0
-    m_ExpandedIDs: d255fafff6c8faffc046fbff7a8afdff5af9ffff64f9ffffcef9ffffd0f9ffffd8f9ffff9efbffffa0fbffffa8fbffffe4fbffff00000000d8250000e22600009e270000ae270000
->>>>>>> origin/master
-=======
-    scrollPos: {x: 0, y: 127.63739}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 40b6fdff88b6fdffeed9feff5801ffff6201ffff0a80ffff54c8ffff56cbffffa8d3ffffe8e9ffffeefafffff0faffffe2fbffff00000000be250000d6250000fa250000182600007626000096260000a0260000b4260000c4260000e02600005227000064270000742700008a270000
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
->>>>>>> e7b72755d6b74b56e4b02ccb442324476d09ab2b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: DeductionPanel
-      m_OriginalName: DeductionPanel
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10122
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -489,21 +423,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
     m_Target: {x: 907.69476, y: 779.5436, z: 597}
     speed: 2
     m_Value: {x: 907.69476, y: 779.5436, z: 597}
-=======
-<<<<<<< HEAD
-    m_Target: {x: 988.77747, y: 600.48694, z: 597}
-    speed: 2
-    m_Value: {x: 988.77747, y: 600.48694, z: 597}
-=======
-    m_Target: {x: 811.2543, y: 618.8091, z: 597}
-    speed: 2
-    m_Value: {x: 811.2543, y: 618.8091, z: 597}
->>>>>>> origin/master
->>>>>>> e7b72755d6b74b56e4b02ccb442324476d09ab2b
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -530,15 +452,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-<<<<<<< HEAD
-    m_Target: 1138.112
-    speed: 2
-    m_Value: 1138.112
-=======
     m_Target: 1452.3945
     speed: 2
     m_Value: 1452.3945
->>>>>>> origin/master
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -612,45 +528,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-<<<<<<< HEAD
     - Assets
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
   - Assets
-=======
-    - Assets/prefab/TopicBrick
-  m_ViewMode: 1
-  m_StartGridSize: 75
-  m_LastFolders:
-  - Assets/prefab/TopicBrick
->>>>>>> e7b72755d6b74b56e4b02ccb442324476d09ab2b
   m_LastFoldersGridSize: 75
   m_LastProjectPath: D:\GitHub\project-wallfacer
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
     m_SelectedIDs: c2260000
     m_LastClickedID: 9922
     m_ExpandedIDs: 00000000c22600000027000014270000bc29000000ca9a3bffffff7f
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_SelectedIDs: 44250000
-    m_LastClickedID: 9540
-    m_ExpandedIDs: 00000000d02400002025000034250000be28000000ca9a3bffffff7f
-=======
-    m_SelectedIDs: 40250000
-    m_LastClickedID: 9536
-    m_ExpandedIDs: 00000000cc2400001a2500002e2500001429000000ca9a3bffffff7f
->>>>>>> origin/master
-=======
-    m_SelectedIDs: 00250000
-    m_LastClickedID: 9472
-    m_ExpandedIDs: 00000000c8240000182500002c250000d028000000ca9a3bffffff7f
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
->>>>>>> e7b72755d6b74b56e4b02ccb442324476d09ab2b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -678,19 +568,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
     m_ExpandedIDs: 00000000c22600000027000014270000bc290000
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_ExpandedIDs: 00000000d024000034250000be280000
-=======
-    m_ExpandedIDs: 00000000cc2400001a2500002e25000014290000
->>>>>>> origin/master
-=======
-    m_ExpandedIDs: 00000000c8240000182500002c250000d0280000
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
->>>>>>> e7b72755d6b74b56e4b02ccb442324476d09ab2b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -715,20 +593,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-<<<<<<< HEAD
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-=======
-    m_SelectedInstanceIDs: 64270000
-    m_LastClickedInstanceID: 10084
-    m_HadKeyboardFocusLastEvent: 1
-<<<<<<< HEAD
-    m_ExpandedInstanceIDs: c6230000325ef7ffd82400003cacfdffca2400002ca8feff102b00004a2500002e25000000000000
-=======
->>>>>>> e7b72755d6b74b56e4b02ccb442324476d09ab2b
     m_ExpandedInstanceIDs: c6230000325ef7ffd82400003cacfdffca2400002ca8feff102b00004a2500002e250000000000004c25000052250000f6240000
->>>>>>> origin/master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

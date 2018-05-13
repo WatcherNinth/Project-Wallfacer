@@ -13,7 +13,7 @@ public class TopicBrickScript : MonoBehaviour {
 
 	private Transform evipanel;
 	private Transform conpanel;
-	private topictype topic;
+	private Topictype topic;
 	private List<Transform> evilist;
     private List<Transform> conlist;
 	// Use this for initialization
@@ -25,7 +25,7 @@ public class TopicBrickScript : MonoBehaviour {
         topicID = gameObject.name;
 		Deactivate();
 		pulldata();
-        brickset();
+        updatetopicbrick();
         gameObject.transform.Find ("Title").GetComponent<Text> ().text = topic.Name;
 	}
 	public void Activate(){
@@ -87,24 +87,14 @@ public class TopicBrickScript : MonoBehaviour {
 			temp.Activated = false;
 		}
 		topic.Evidence [target] = temp;
-<<<<<<< HEAD
-<<<<<<< HEAD
-		consettlement ();
-		pushdata ();
-=======
         pushdata();
         GameObject.Find("DeductBoardPanel").GetComponent<DeductionBoardScript>().globalconsettlement();
->>>>>>> origin/master
-=======
-		consettlement ();
-        //update contradiction panel
-        GameObject.Find("DeductBoardPanel/ContradictPanel").GetComponent<ContradictionPanelScript>().UpdateContradiction();
-        pushdata ();
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
 	}
     
 	public void updatecon(){
 		Transform temp;
+        int discovered = 0;
+        string tempstring;
         conlist.Clear();
 		for (int i = 0; i < conpanel.childCount; i++) {
 			Destroy (conpanel.GetChild (i).gameObject);
@@ -123,27 +113,31 @@ public class TopicBrickScript : MonoBehaviour {
 				if (topic.Conclusion [i].Interactable)
 					temp.GetComponent<Toggle> ().interactable = true;
 				else
-                    //debug
 					temp.GetComponent<Toggle> ().interactable = false;
-				//contracted
-				if (topic.Conclusion [i].Contradicted)
+                if (topic.Interactable == false) temp.GetComponent<Toggle>().interactable = false;
+                //contracted
+                if (topic.Conclusion [i].Contradicted)
 					temp.Find ("Contradict").gameObject.SetActive (true);
 				else
 					temp.Find ("Contradict").gameObject.SetActive (false);
-				temp.SetSiblingIndex(i);
+				temp.name=i.ToString();
                 conlist.Add(temp);
-			}
-		}
+                discovered++;
+            }
+            tempstring = discovered.ToString() + "/" + topic.Conclusion.Count.ToString();
+            gameObject.transform.Find("ConclusionNum").GetComponent<Text>().text = tempstring;
+        }
         foreach(Transform item in conlist)
         {
             item.GetComponent<Toggle>().onValueChanged.AddListener(ifselect => { conclickhandler(item, ifselect); });
+            //item.GetComponent<BoxCollider2D>().size = item.GetComponent<RectTransform>().rect.size;
         }
 	}
     void conclickhandler(Transform con, bool On)
     {
         Conclusiontype temp;
         Transform DeductBoard = GameObject.Find("DeductBoardPanel").transform;
-        int target = con.GetSiblingIndex();
+        int target = ToInt(con.name);
         print(target + " " + On);
         temp = topic.Conclusion[target];
         if (On)
@@ -155,51 +149,27 @@ public class TopicBrickScript : MonoBehaviour {
             temp.Activated = false;
         }
         topic.Conclusion[target] = temp;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        consettlement();
-        pushdata();
-    }
-    void consettlement(){
-		//bool changed=false;
-=======
         DeductBoard.GetComponent<DeductionBoardScript>().UpdateActiveConclusion();
-=======
-        //activate a conclusion can cause many contradiction appears
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
         //global consettlement
         GameObject.Find("DeductBoardPanel").GetComponent<DeductionBoardScript>().globalconsettlement();
-        //global topicsettlement
-        GameObject.Find("DeductBoardPanel").GetComponent<DeductionBoardScript>().globaltopicsettlement();
-        //update contradiction panel
-        GameObject.Find("DeductBoardPanel").transform.Find("ContradictPanel").GetComponent<ContradictionPanelScript>().UpdateContradiction();
-        pushdata();
     }
-<<<<<<< HEAD
     public bool consettlement(){
 		bool changed=false;
->>>>>>> origin/master
-=======
-    public void consettlement(){
-		//bool changed=false;
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
 		bool flag=false;
 		Conclusiontype temp;
 		for (int i = 0; i < topic.Conclusion.Count; i++) {
 			temp = topic.Conclusion [i];
-			//update supportmet and interactable
+			//update supportmet
 			if (topic.Conclusion [i].Support.Length != 0) { 
 				for (int j = 0; j < temp.Support.Length; j++) {
 					for (int k = 0; k < temp.Support [j].Length; k++) {
 						temp.Supportmet [j] = true;
-						flag = true;
 						if (searchcondition (temp.Support [j] [k]) == false) {
 							temp.Supportmet [j] = false;
-							flag = false;
 							break;
 						}
 					}
-                    print(topicID + " conclusion " + i + " Scondition " + j + " " + flag);
+                    //print(topicID + " conclusion " + i + " Scondition " + j + " " + flag);
 
 				}
 			}
@@ -213,29 +183,25 @@ public class TopicBrickScript : MonoBehaviour {
 			//handle discover
 			if (flag && topic.Conclusion [i].Discovered == false)
 				temp.Discovered = true;
-            brickset();
+            //assumption override
+            if (topic.Conclusion[i].Assumption) flag = true;
             //handle interactable
-			temp.Interactable = flag;
-            if (flag) Cosmos.Instance().ActivatedConclusion.Add(temp);
-            else Cosmos.Instance().ActivatedConclusion.RemoveAll(x => x.NO == temp.NO);
-            //activated conclusion failed to met the support
-            if (temp.Activated && flag == false) {
-				temp.Activated = false;
-                Cosmos.Instance().ActivatedConclusion.RemoveAll(x => x.NO == temp.NO);
-			}
-			//update objectionmet and contradicted
+            if (flag != temp.Interactable)
+            {
+                temp.Interactable = flag;
+                changed = true;
+            }
+			//update objectionmet
 			if (topic.Conclusion [i].Objection.Length != 0) {
 				for (int j = 0; j < temp.Objection.Length; j++) {
 					for (int k = 0; k < temp.Objection [j].Length; k++) {
 						temp.Objectionmet [j] = true;
-						flag = true;
 						if (searchcondition (temp.Objection [j] [k]) == false) {
 							temp.Objectionmet [j] = false;
-							flag = false;
 							break;
 						}
 					}
-                    print(topicID + " conclusion " + i + " Ocondition " + j + " " + flag);
+                    //print(topicID + " conclusion " + i + " Ocondition " + j + " " + flag);
 				}
 			}
 			flag = false;
@@ -245,15 +211,48 @@ public class TopicBrickScript : MonoBehaviour {
 					break;
 				}
 			}
-			temp.Contradicted = flag;
+            if(temp.Contradicted!=flag)
+            {
+                changed = true;
+                temp.Contradicted = flag;
+            }
 			//push back temp
 			topic.Conclusion [i] = temp;
-            //calculate contradiction
-            GameObject.Find("DeductBoardPanel/ContradictPanel").GetComponent<ContradictionPanelScript>().UpdateContradiction();
 		}
-		updatecon ();
+        bool depand=false;
+        for(int i = 0; i < topic.Depand.Length; i++)
+        {
+            if(topic.Depand[0]=="0" || searchcondition(topic.Depand[i]) == true)
+            {
+                depand = true;
+                print(topic.NO + " " + depand);
+                break;
+            }
+        }
+        if (depand != topic.Interactable)
+        {
+            changed = true;
+            topic.Interactable = depand;
+        }
+        if(topic.Interactable && topic.Discovered == false)
+        {
+            topic.Discovered = true;
+            print(topic.NO + " discovered");
+        }
+        pushdata();
+        return (changed);
 	}
-	bool searchcondition(string id){
+    int ToInt(string value)
+    {
+        int result = 0;
+        for (int i = 0; i < value.Length; i++)
+        {
+            char letter = value[i];
+            result = 10 * result + (letter - 48);
+        }
+        return result;
+    }
+    bool searchcondition(string id){
 		for (int i = 0; i < topic.Evidence.Count; i++) {
             if (topic.Evidence[i].eviID == id && topic.Evidence[i].Activated) return true;
 		}
@@ -276,30 +275,12 @@ public class TopicBrickScript : MonoBehaviour {
 			}
 		}
 	}
-    public void brickset()
+    public void updatetopicbrick()
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
-        string temp;
-        int discovered=0;
-        for(int i = 0; i < topic.Conclusion.Count; i++)
-        {
-            if (topic.Conclusion[i].Discovered) discovered++;
-        }
-        temp = discovered.ToString() + "/" + topic.Conclusion.Count.ToString();
-        gameObject.transform.Find("ConclusionNum").GetComponent<Text>().text = temp;
-<<<<<<< HEAD
-=======
         updateevi();
         updatecon();
         gameObject.SetActive(topic.Discovered);
         gameObject.GetComponent<Button>().interactable = topic.Interactable;
->>>>>>> origin/master
-=======
-        gameObject.SetActive(topic.Discovered);
->>>>>>> parent of f7a4def... 5.11 Dependecy system complete
     }
 	// Update is called once per frame
 	void Update () {

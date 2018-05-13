@@ -15,16 +15,21 @@ public struct Filedatatype{
 	public string Description;
 	public string Stored;
 }
-public struct Topictype{
+public struct topictype{
 	public string NO;
 	public string Name;
 	public string Speaker;
 	//public string[] Conclusion;
 	public string[] Related;
+<<<<<<< HEAD
+=======
     public string[] Depand;
+<<<<<<< HEAD
     public bool[] Depandmet;
+>>>>>>> origin/master
+=======
+>>>>>>> parent of f7a4def... 5.11 Dependecy system complete
 	public bool Discovered;
-    public bool Interactable;
 	//Deduction Board
 	public List<Evidencetype> Evidence;
 	public List<Conclusiontype> Conclusion;
@@ -42,7 +47,6 @@ public struct Conclusiontype{
 	public bool[] Supportmet;
 	public string[][] Objection;
 	public bool[] Objectionmet;
-    public string[] Lit;
 }
 public struct Evidencetype{
 	public string eviID;
@@ -59,7 +63,7 @@ public class Cosmos {
     private static Cosmos instance;
     public FileLinedatatype[] worddata;
     public Filedatatype[] document;
-    public Topictype[] Topiclist;
+    public topictype[] Topiclist;
     public Conclusiontype[] Conclusionlist;
     public List<Conclusiontype> ActivatedConclusion;
 	//load data
@@ -103,7 +107,7 @@ public class Cosmos {
 		for (int i = 1; i < filedata.Length; i++) {
 			linedata [i - 1] = filedata [i].Split (',');
 		}
-		Topiclist = new Topictype[linedata.Length];
+		Topiclist = new topictype[linedata.Length];
 		for (int i = 0; i < linedata.Length; i++) {
 			Topiclist [i].NO = linedata [i] [0];
 			Topiclist [i].Name = linedata [i] [1];
@@ -114,15 +118,19 @@ public class Cosmos {
 				Topiclist [i].Discovered = false;
 			else
 				Topiclist [i].Discovered = true;
+<<<<<<< HEAD
+			//Deduciton Board init
+			Topiclist[i].Evidence=new List<Evidencetype>();
+=======
             Topiclist[i].Depand = linedata[i][6].Split(' ');
-            Topiclist[i].Depandmet = new bool[Topiclist[i].Depand.Length];
-            if (Topiclist[i].Depand[0] != "0")
+            if (Topiclist[i].Depand.Length != 0)
             {
                 Topiclist[i].Interactable = false;
             }
             else Topiclist[i].Interactable = true;
             //Deduciton Board init
             Topiclist[i].Evidence=new List<Evidencetype>();
+>>>>>>> origin/master
 			Topiclist[i].Conclusion=new List<Conclusiontype>();
 		}
 		//Conclusion
@@ -158,10 +166,14 @@ public class Cosmos {
 				Conclusionlist [i].Objection [j] = temp [j].Split ('&');
 				Conclusionlist [i].Objectionmet [j] = false;
 			}
+<<<<<<< HEAD
+			for (int j = 0; j < Topiclist.Length; j++) {
+=======
             Conclusionlist[i].Lit = linedata[i][6].Split(' ');
             if (linedata[i][7] == "1") Conclusionlist[i].Assumption = true;
             else Conclusionlist[i].Assumption = false ;
             for (int j = 0; j < Topiclist.Length; j++) {
+>>>>>>> origin/master
 				if (Conclusionlist [i].Topic == Topiclist [j].NO) {
 					Topiclist [j].Conclusion.Add (Conclusionlist [i]);
 				}

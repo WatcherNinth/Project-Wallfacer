@@ -21,7 +21,7 @@ public class TopicBrickScript : MonoBehaviour {
 		evipanel=Instantiate(EvidencePanel,gameObject.transform.Find("EviPoint"));
 		conpanel=Instantiate(ConclusionPanel,gameObject.transform.Find("ConPoint"));
 		evilist = new List<Transform> ();
-        conlist = new List<Transform>();
+        conlist = new List<Transform> ();
         topicID = gameObject.name;
 		Deactivate();
 		pulldata();
@@ -281,6 +281,10 @@ public class TopicBrickScript : MonoBehaviour {
         updatecon();
         gameObject.SetActive(topic.Discovered);
         gameObject.GetComponent<Button>().interactable = topic.Interactable;
+        gameObject.transform.Find("DebateBtn").gameObject.SetActive(topic.Debate);
+    }
+    public void DebateBtnHandler() {
+        
     }
 	// Update is called once per frame
 	void Update () {

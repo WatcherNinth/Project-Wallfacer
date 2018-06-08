@@ -7,6 +7,7 @@ public struct FileLinedatatype{
 	public string FileID;
 	public string LineID;
 	public string Content;
+    public List<TagType> Tag;
 }
 public struct Filedatatype{
 	public string NO;
@@ -25,6 +26,7 @@ public struct Topictype{
     public bool[] Depandmet;
 	public bool Discovered;
     public bool Interactable;
+    public bool Debate;
 	//Deduction Board
 	public List<Evidencetype> Evidence;
 	public List<Conclusiontype> Conclusion;
@@ -48,12 +50,23 @@ public struct Evidencetype{
 	public string eviID;
 	public string evitext;
 	public bool Activated;
+    public List<TagType> Tag;
 }
-/*public struct Contradictiontype
+public enum TagCategory
 {
-    public string title;
-    public List<string> Condition;
-}*/
+    Person,
+    Object,
+    Time,
+    Place,
+    Action,
+    Event
+};
+public struct TagType
+{
+    public string ID;
+    public string Name;
+    public TagCategory Type;
+}
 
 public class Cosmos {
     private static Cosmos instance;
@@ -62,15 +75,33 @@ public class Cosmos {
     public Topictype[] Topiclist;
     public Conclusiontype[] Conclusionlist;
     public List<Conclusiontype> ActivatedConclusion;
+    public List<TagType> Taglist;
 	//load data
 	private Cosmos (){
-        //ArrayList list = new ArrayList ();
-        //init worddata
+        //Conclusion
         ActivatedConclusion = new List<Conclusiontype>();
-		string filepath = "assets/resource/content.csv";
-		string[] filedata = File.ReadAllLines (filepath);
-		string[][] linedata=new string[filedata.Length-1][];
-		string[] temp;
+        //init tag
+        string filepath = "assets/resource/content.csv";
+        string[] filedata = File.ReadAllLines(filepath);
+        string[][] linedata = new string[filedata.Length - 1][];
+        string[] temp;
+        for (int i = 1; i < filedata.Length; i++)
+        {
+            linedata[i - 1] = filedata[i].Split(',');
+        }
+        Taglist = new List<TagType>();
+        for (int i = 0; i < linedata.Length; i++)
+        {
+            TagType Tagtemp;
+            Tagtemp.ID = linedata[i][0];
+            Tagtemp.Name = linedata[i][1];
+            Tagtemp.Type = (TagCategory)System.Enum.Parse(typeof(TagCategory), linedata[i][2]);
+            Taglist.Add(Tagtemp);
+        }
+        //init worddata
+        filepath = "assets/resource/content.csv";
+		filedata = File.ReadAllLines (filepath);
+		linedata=new string[filedata.Length-1][];
 		for (int i = 1; i < filedata.Length; i++) {
 			linedata [i - 1] = filedata [i].Split (',');
 		}
@@ -80,6 +111,12 @@ public class Cosmos {
 			worddata [i].FileID = temp [0];
 			worddata [i].LineID = temp [1];
 			worddata [i].Content = linedata [i] [1];
+            worddata [i].Tag = new List<TagType>();
+            temp = linedata[i][2].Split(' ');
+            for(int j = 0; j < linedata[i][2].Length; j++)
+            {
+                worddata[i].Tag.Add(Taglist.Find(x=> x.ID==temp[j]));
+            }
 		}
 		//init document
 		filepath = "assets/resource/documentlist.csv";
@@ -121,6 +158,15 @@ public class Cosmos {
                 Topiclist[i].Interactable = false;
             }
             else Topiclist[i].Interactable = true;
+            //Debate init
+            if(linedata[i][6] == "1")
+            {
+                Topiclist[i].Debate = true;
+            }
+            else
+            {
+                Topiclist[i].Debate = false;
+            }
             //Deduciton Board init
             Topiclist[i].Evidence=new List<Evidencetype>();
 			Topiclist[i].Conclusion=new List<Conclusiontype>();
